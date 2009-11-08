@@ -1,0 +1,13 @@
+
+<h1><%= @question.name %></h1>
+<%= link_to "uusi kysymys", questions_url %>
+
+<ol>
+<% @question.answer_options.each do |ao| %>
+
+	<li><%= ao.name %>: <%= ao.answers.count %></li>
+
+<% end %>
+
+<meta http-equiv="refresh" content="1" />
+</ol>

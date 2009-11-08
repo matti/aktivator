@@ -1,0 +1,29 @@
+
+<h1><%= @question.name %></h1>
+
+<% unless @already_answered %>
+<ol>
+
+
+
+<% form_for @answer do |f| %>
+		<% @question.answer_options.each do |ao| %>
+			<li><%= ao.name %>: <%= radio_button_tag 'answer_option_id', ao.id %></li>
+		<% end %>
+		<%=submit_tag "vastaa"%>
+<% end %>
+	
+	<%#= link_to ao.name, answer_url(:answer_option_id=>ao.id), :method=>:post %></li>
+
+
+</ol>
+	
+	
+<% else %>
+
+
+Kiitos vastauksestasi.
+<meta http-equiv="refresh" content="1" />
+
+
+<% end %>

@@ -1,0 +1,14 @@
+
+<%  form_for @question do |f| %>	
+	<pre>
+	Question: <%= f.text_field :name %>
+
+	
+	Answer option 1: <%= text_field_tag :answer_option_1 %>
+	Answer option 2: <%= text_field_tag :answer_option_2 %>
+	Answer option 3: <%= text_field_tag :answer_option_3 %>
+	
+	<%=submit_tag "ok" %>
+	</pre>
+<% end %>
+

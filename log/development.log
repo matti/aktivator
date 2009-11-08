@@ -1,0 +1,2748 @@
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.2ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20091030093817)
+  [4;36;1mSQL (0.8ms)[0m   [0;1mCREATE TABLE "questions" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20091030093817')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("questions")[0m
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 11:40:55) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (undefined method `questions_path' for #<ActionView::Base:0x265ad18>) on line #2 of app/views/questions/index.html.erb:
+1: 
+2: <%  form_for @question do |f| %>	
+3: 	Question: <% f.text_field :name %> <%=submit_tag "ok" %>
+4: <% end %>
+
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (55.3ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 11:41:24) [GET]
+Rendering questions/index
+Completed in 95ms (View: 89, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 11:41:31) [GET]
+Rendering questions/index
+Completed in 15ms (View: 10, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 11:41:33) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "question"=>{"name"=>"asdfasdf"}}
+
+ActionController::UnknownAction (No action responded to create. Actions: index):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 11:41:59) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "question"=>{"name"=>"asdfasdf"}}
+  [4;36;1mQuestion Create (0.6ms)[0m   [0;1mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('asdfasdf', '2009-10-30 09:41:59', '2009-10-30 09:41:59')[0m
+Redirected to http://localhost:3000/questions
+Completed in 11ms (DB: 1) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 11:41:59) [GET]
+Rendering questions/index
+Completed in 12ms (View: 4, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 11:42:01) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "question"=>{"name"=>"asdfsadf"}}
+  [4;35;1mQuestion Create (0.5ms)[0m   [0mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('asdfsadf', '2009-10-30 09:42:01', '2009-10-30 09:42:01')[0m
+Redirected to http://localhost:3000/questions
+Completed in 10ms (DB: 1) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 11:42:01) [GET]
+Rendering questions/index
+Completed in 10ms (View: 4, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 11:43:05) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "question"=>{"name"=>"asdfasdfasdf"}}
+  [4;36;1mQuestion Create (0.5ms)[0m   [0;1mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('asdfasdfasdf', '2009-10-30 09:43:05', '2009-10-30 09:43:05')[0m
+Redirected to http://localhost:3000/questions/3
+Completed in 16ms (DB: 0) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 11:43:05) [GET]
+  Parameters: {"id"=>"3"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 3) [0m
+Rendering questions/show
+Completed in 18ms (View: 12, DB: 0) | 200 OK [http://localhost/questions/3]
+  [4;36;1mSQL (0.7ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20091030093817)
+Migrating to CreateAnswers (20091030094326)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mCREATE TABLE "answers" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "answer_option_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091030094326')[0m
+Migrating to CreateAnswerOptions (20091030094353)
+  [4;35;1mSQL (0.6ms)[0m   [0mCREATE TABLE "answer_options" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "question_id" integer, "name" varchar(255), "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20091030094353')[0m
+  [4;35;1mSQL (0.6ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("answer_options")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("answers")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("questions")[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateQuestions (20091030093817)
+Migrating to CreateAnswers (20091030094326)
+Migrating to CreateAnswerOptions (20091030094353)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("answer_options")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("answers")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("questions")[0m
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 11:47:40) [GET]
+Rendering questions/index
+Completed in 50ms (View: 14, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 11:49:11) [GET]
+Rendering questions/index
+Completed in 26ms (View: 14, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 11:49:13) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option"=>{"name"=>"a"}, "question"=>{"name"=>"asdfasdfasdf"}}
+  [4;36;1mQuestion Create (0.5ms)[0m   [0;1mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('asdfasdfasdf', '2009-10-30 09:49:13', '2009-10-30 09:49:13')[0m
+
+TypeError (exception class/object expected):
+  app/controllers/questions_controller.rb:12:in `raise'
+  app/controllers/questions_controller.rb:12:in `create'
+
+Rendered rescues/_trace (44.2ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 11:49:21) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option"=>{"name"=>"a"}, "question"=>{"name"=>"asdfasdfasdf"}}
+  [4;35;1mQuestion Create (0.6ms)[0m   [0mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('asdfasdfasdf', '2009-10-30 09:49:21', '2009-10-30 09:49:21')[0m
+
+RuntimeError (#<AnswerOption:0x24fa48c>):
+  app/controllers/questions_controller.rb:12:in `create'
+
+Rendered rescues/_trace (49.6ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 11:49:30) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option"=>{"name"=>"a"}, "question"=>{"name"=>"asdfasdfasdf"}}
+  [4;36;1mQuestion Create (0.6ms)[0m   [0;1mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('asdfasdfasdf', '2009-10-30 09:49:30', '2009-10-30 09:49:30')[0m
+
+RuntimeError (#<AnswerOption id: nil, question_id: 6, name: nil, created_at: nil, updated_at: nil>):
+  app/controllers/questions_controller.rb:12:in `create'
+
+Rendered rescues/_trace (156.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 11:49:38) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option"=>{"name"=>"asdfasdf"}, "question"=>{"name"=>"asdfasdfasdf"}}
+  [4;35;1mQuestion Create (0.5ms)[0m   [0mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('asdfasdfasdf', '2009-10-30 09:49:38', '2009-10-30 09:49:38')[0m
+
+RuntimeError (#<AnswerOption id: nil, question_id: 7, name: nil, created_at: nil, updated_at: nil>):
+  app/controllers/questions_controller.rb:12:in `create'
+
+Rendered rescues/_trace (43.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 11:49:59) [GET]
+Rendering questions/index
+Completed in 23ms (View: 7, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 11:50:01) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option"=>{"name"=>"asdfasdf"}, "question"=>{"name"=>"asdfasdfasdf"}}
+  [4;36;1mQuestion Create (6.7ms)[0m   [0;1mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('asdfasdfasdf', '2009-10-30 09:50:01', '2009-10-30 09:50:01')[0m
+
+RuntimeError (#<AnswerOption id: nil, question_id: 8, name: "asdfasdf", created_at: nil, updated_at: nil>):
+  app/controllers/questions_controller.rb:12:in `create'
+
+Rendered rescues/_trace (42.6ms)
+Rendered rescues/_request_and_response (1.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 11:50:30) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option"=>{"name"=>"a"}, "question"=>{"name"=>"asdfasdfasdf"}}
+  [4;35;1mQuestion Create (0.6ms)[0m   [0mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('asdfasdfasdf', '2009-10-30 09:50:30', '2009-10-30 09:50:30')[0m
+
+RuntimeError (#<AnswerOption id: nil, question_id: 9, name: "a", created_at: nil, updated_at: nil>):
+  app/controllers/questions_controller.rb:12:in `create'
+
+Rendered rescues/_trace (41.0ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 11:51:29) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option"=>{"name"=>"a"}, "question"=>{"name"=>"asdfasdfasdf"}}
+  [4;36;1mQuestion Create (0.6ms)[0m   [0;1mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('asdfasdfasdf', '2009-10-30 09:51:29', '2009-10-30 09:51:29')[0m
+  [4;35;1mAnswerOption Create (0.5ms)[0m   [0mINSERT INTO "answer_options" ("name", "updated_at", "question_id", "created_at") VALUES('a', '2009-10-30 09:51:29', 10, '2009-10-30 09:51:29')[0m
+Redirected to http://localhost:3000/questions/10
+Completed in 29ms (DB: 1) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 11:51:29) [GET]
+  Parameters: {"id"=>"10"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 10) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.5ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 10) [0m
+Completed in 30ms (View: 22, DB: 1) | 200 OK [http://localhost/questions/10]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 11:51:39) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option"=>{"name"=>"a"}, "question"=>{"name"=>"asdfasdfasdf"}}
+  [4;36;1mQuestion Create (0.5ms)[0m   [0;1mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('asdfasdfasdf', '2009-10-30 09:51:39', '2009-10-30 09:51:39')[0m
+  [4;35;1mAnswerOption Create (1.0ms)[0m   [0mINSERT INTO "answer_options" ("name", "updated_at", "question_id", "created_at") VALUES('a', '2009-10-30 09:51:39', 11, '2009-10-30 09:51:39')[0m
+Redirected to http://localhost:3000/questions/11
+Completed in 24ms (DB: 2) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 11:51:39) [GET]
+  Parameters: {"id"=>"11"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 11) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.7ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 11) [0m
+Completed in 30ms (View: 21, DB: 1) | 200 OK [http://localhost/questions/11]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 11:54:22) [GET]
+  [4;36;1mQuestion Load (1.8ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;35;1mAnswerOption Load (0.5ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 11) [0m
+Completed in 51ms (View: 34, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 11:54:42) [GET]
+  [4;36;1mQuestion Load (1.8ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;35;1mAnswerOption Load (0.5ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 11) [0m
+Completed in 27ms (View: 18, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#show (for 127.0.0.1 at 2009-10-30 11:57:10) [GET]
+  Parameters: {"id"=>"2"}
+
+ActionController::UnknownAction (No action responded to show. Actions: create and index):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 11:58:27) [GET]
+  [4;36;1mQuestion Load (1.7ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;35;1mAnswerOption Load (0.5ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 11) [0m
+Completed in 30ms (View: 21, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-10-30 11:58:30) [POST]
+  Parameters: {"authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI="}
+
+ActionController::MethodNotAllowed (Only get, put, and delete requests are allowed.):
+  
+
+Rendered rescues/_trace (39.5ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (method_not_allowed)
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 11:59:34) [GET]
+  [4;36;1mQuestion Load (1.9ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;35;1mAnswerOption Load (0.5ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 11) [0m
+
+ActionView::TemplateError (answer_url failed to generate from {:controller=>"answers", :action=>"show", :answer_option=>#<AnswerOption id: 2, question_id: 11, name: "a", created_at: "2009-10-30 09:51:39", updated_at: "2009-10-30 09:51:39">}, expected: {:controller=>"answers", :action=>"show"}, diff: {:answer_option=>#<AnswerOption id: 2, question_id: 11, name: "a", created_at: "2009-10-30 09:51:39", updated_at: "2009-10-30 09:51:39">}) on line #7 of app/views/answers/index.html.erb:
+4: <ol>
+5: <% @question.answer_options.each do |ao| %>
+6: 
+7: 	<li><%= link_to ao.name, answer_url(:answer_option=>ao), :method=>:post %></li>
+8: 
+9: <% end %>
+10: </ol>
+
+    (eval):16:in `answer_url'
+    app/views/answers/index.html.erb:7
+    app/views/answers/index.html.erb:5
+
+Rendered rescues/_trace (63.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 11:59:43) [GET]
+  [4;36;1mQuestion Load (1.8ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;35;1mAnswerOption Load (0.5ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 11) [0m
+
+ActionView::TemplateError (answer_url failed to generate from {:answer_option_id=>2, :controller=>"answers", :action=>"show"}, expected: {:controller=>"answers", :action=>"show"}, diff: {:answer_option_id=>2}) on line #7 of app/views/answers/index.html.erb:
+4: <ol>
+5: <% @question.answer_options.each do |ao| %>
+6: 
+7: 	<li><%= link_to ao.name, answer_url(:answer_option_id=>ao.id), :method=>:post %></li>
+8: 
+9: <% end %>
+10: </ol>
+
+    (eval):16:in `answer_url'
+    app/views/answers/index.html.erb:7
+    app/views/answers/index.html.erb:5
+
+Rendered rescues/_trace (158.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:03:19) [GET]
+  [4;36;1mQuestion Load (1.7ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+ERROR: compiling _run_erb_app47views47answers47index46html46erb RAISED compile error
+/Users/mpa/Development/inshitu/app/views/answers/index.html.erb:11: syntax error, unexpected '<', expecting ')'
+		<%=submit_tag "vastaa").to_s); @output_buffer.concat "\n"
+		 ^
+/Users/mpa/Development/inshitu/app/views/answers/index.html.erb:23: syntax error, unexpected tIDENTIFIER, expecting ')'
+Function body:           def _run_erb_app47views47answers47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n"
+@output_buffer.concat "<h1>"; @output_buffer.concat(( @question.name ).to_s); @output_buffer.concat "</h1>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<ol>\n"
+ @question.answer_options.each do |ao| ; @output_buffer.concat "\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\t";  form_for @answer do |f| ; @output_buffer.concat "\n"
+@output_buffer.concat "\t\t\n"
+@output_buffer.concat "\t\t"; @output_buffer.concat(( select_tag 'answer_option_id', options_for_select(@question.answer_options.collect{ |ao| [ao.name, ao.id] })
+	
+		<%=submit_tag "vastaa").to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\t\n"
+@output_buffer.concat "\t";  end ; @output_buffer.concat "\n"
+@output_buffer.concat "\t\n"
+@output_buffer.concat "\t"; @output_buffer.concat "</li>\n"
+@output_buffer.concat "\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer.concat "</ol>\n"
+@output_buffer.concat "\t\n"
+@output_buffer.concat "\t\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/mpa/Development/inshitu/app/views/answers/index.html.erb:24:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/mpa/Development/inshitu/app/views/answers/index.html.erb:11: syntax error, unexpected '<', expecting ')'
+		<%=submit_tag "vastaa").to_s); @output_buffer.concat "\n"
+		 ^
+/Users/mpa/Development/inshitu/app/views/answers/index.html.erb:23: syntax error, unexpected tIDENTIFIER, expecting ')') on line #11 of app/views/answers/index.html.erb:
+8: 		
+9: 		<%= select_tag 'answer_option_id', options_for_select(@question.answer_options.collect{ |ao| [ao.name, ao.id] })
+10: 	
+11: 		<%=submit_tag "vastaa"%>
+12: 	
+13: 	<% end %>
+14: 	
+
+    app/views/answers/index.html.erb:24:in `compile!'
+
+Rendered rescues/_trace (48.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:03:25) [GET]
+  [4;35;1mQuestion Load (1.8ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;36;1mAnswerOption Load (0.4ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 11) [0m
+
+ActionView::TemplateError (Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id) on line #7 of app/views/answers/index.html.erb:
+4: <ol>
+5: <% @question.answer_options.each do |ao| %>
+6: 
+7: 	<% form_for @answer do |f| %>
+8: 		
+9: 		<%= select_tag 'answer_option_id', options_for_select(@question.answer_options.collect{ |ao| [ao.name, ao.id] }) %>
+10: 	
+
+    app/views/answers/index.html.erb:7
+    app/views/answers/index.html.erb:5
+
+Rendered rescues/_trace (151.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:03:43) [GET]
+  [4;35;1mQuestion Load (1.8ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;36;1mAnswerOption Load (0.4ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 11) [0m
+Completed in 33ms (View: 12, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2009-10-30 12:03:57) [POST]
+  Parameters: {"commit"=>"vastaa", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option_id"=>"2"}
+
+ActiveRecord::RecordNotFound (Couldn't find AnswerOption without an ID):
+  app/controllers/answers_controller.rb:10:in `create'
+
+Rendered rescues/_trace (42.7ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2009-10-30 12:04:13) [POST]
+  Parameters: {"commit"=>"vastaa", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option_id"=>"2"}
+  [4;35;1mAnswerOption Load (0.3ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options"."id" = 2) [0m
+  [4;36;1mAnswer Create (0.6ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "answer_option_id", "created_at") VALUES('2009-10-30 10:04:13', 2, '2009-10-30 10:04:13')[0m
+Redirected to http://localhost:3000/answers
+Completed in 18ms (DB: 1) | 302 Found [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:04:13) [GET]
+  [4;35;1mQuestion Load (1.7ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;36;1mAnswerOption Load (0.5ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 11) [0m
+Completed in 27ms (View: 15, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:04:44) [GET]
+Rendering questions/index
+Completed in 28ms (View: 16, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 12:04:56) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option"=>{"name"=>"puluparvi"}, "question"=>{"name"=>"Mikä on kyyhkysakka"}}
+  [4;35;1mQuestion Create (0.6ms)[0m   [0mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('Mikä on kyyhkysakka', '2009-10-30 10:04:56', '2009-10-30 10:04:56')[0m
+  [4;36;1mAnswerOption Create (0.5ms)[0m   [0;1mINSERT INTO "answer_options" ("name", "updated_at", "question_id", "created_at") VALUES('puluparvi', '2009-10-30 10:04:56', 12, '2009-10-30 10:04:56')[0m
+Redirected to http://localhost:3000/questions/12
+Completed in 112ms (DB: 1) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:04:56) [GET]
+  Parameters: {"id"=>"12"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 12) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.4ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 12) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 3) [0m
+Completed in 28ms (View: 19, DB: 1) | 200 OK [http://localhost/questions/12]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:05:04) [GET]
+  [4;36;1mQuestion Load (1.7ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;35;1mAnswerOption Load (1.2ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 12) [0m
+Completed in 28ms (View: 15, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2009-10-30 12:05:07) [POST]
+  Parameters: {"commit"=>"vastaa", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option_id"=>"3"}
+  [4;36;1mAnswerOption Load (0.3ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options"."id" = 3) [0m
+  [4;35;1mAnswer Create (0.5ms)[0m   [0mINSERT INTO "answers" ("updated_at", "answer_option_id", "created_at") VALUES('2009-10-30 10:05:07', 3, '2009-10-30 10:05:07')[0m
+Redirected to http://localhost:3000/answers
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:05:07) [GET]
+  [4;36;1mQuestion Load (1.7ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;35;1mAnswerOption Load (0.4ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 12) [0m
+Completed in 23ms (View: 12, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:05:09) [GET]
+  Parameters: {"id"=>"12"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 12) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.4ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 12) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 3) [0m
+Completed in 21ms (View: 13, DB: 1) | 200 OK [http://localhost/questions/12]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:05:12) [GET]
+  [4;35;1mQuestion Load (1.8ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;36;1mAnswerOption Load (0.5ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 12) [0m
+Completed in 26ms (View: 12, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2009-10-30 12:05:13) [POST]
+  Parameters: {"commit"=>"vastaa", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option_id"=>"3"}
+  [4;35;1mAnswerOption Load (0.3ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options"."id" = 3) [0m
+  [4;36;1mAnswer Create (0.5ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "answer_option_id", "created_at") VALUES('2009-10-30 10:05:13', 3, '2009-10-30 10:05:13')[0m
+Redirected to http://localhost:3000/answers
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:05:13) [GET]
+  [4;35;1mQuestion Load (1.8ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;36;1mAnswerOption Load (0.4ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 12) [0m
+Completed in 112ms (View: 100, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:05:15) [GET]
+  Parameters: {"id"=>"12"}
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 12) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.5ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 12) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 3) [0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/12]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:07:57) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (undefined method `name' for #<Array:0x25d4e5c>) on line #8 of app/views/questions/index.html.erb:
+5: 
+6: 	
+7: 	<% fields_for :answer_options do |ao| %>
+8: 		Answer option 1: <%= ao.text_field :name %>
+9: 	<% end%>
+10: 	
+11: 	<%=submit_tag "ok" %>
+
+    app/views/questions/index.html.erb:8
+    app/views/questions/index.html.erb:7
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (58.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:08:29) [GET]
+Rendering questions/index
+Completed in 26ms (View: 14, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:09:07) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (wrong number of arguments (0 for 1)) on line #8 of app/views/questions/index.html.erb:
+5: 
+6: 	
+7: 	<% fields_for :answer_options do |ao| %>
+8: 		<%= ao.text_field :delete %> 
+9: 	<% end%>
+10: 	
+11: 	<%=submit_tag "ok" %>
+
+    app/views/questions/index.html.erb:8
+    app/views/questions/index.html.erb:7
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (57.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:09:23) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (undefined method `merge' for 1:Fixnum) on line #8 of app/views/questions/index.html.erb:
+5: 
+6: 	
+7: 	<% fields_for :answer_options do |ao| %>
+8: 		<%= ao.text_field :delete, 1 %> 
+9: 	<% end%>
+10: 	
+11: 	<%=submit_tag "ok" %>
+
+    app/views/questions/index.html.erb:8
+    app/views/questions/index.html.erb:7
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (55.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:09:28) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (undefined method `merge' for :wat:Symbol) on line #8 of app/views/questions/index.html.erb:
+5: 
+6: 	
+7: 	<% fields_for :answer_options do |ao| %>
+8: 		<%= ao.text_field :delete, :wat %> 
+9: 	<% end%>
+10: 	
+11: 	<%=submit_tag "ok" %>
+
+    app/views/questions/index.html.erb:8
+    app/views/questions/index.html.erb:7
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (53.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:09:35) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (undefined method `_delete' for #<Array:0x24de110>) on line #8 of app/views/questions/index.html.erb:
+5: 
+6: 	
+7: 	<% fields_for :answer_options do |ao| %>
+8: 		<%= ao.text_field :_delete %> 
+9: 	<% end%>
+10: 	
+11: 	<%=submit_tag "ok" %>
+
+    app/views/questions/index.html.erb:8
+    app/views/questions/index.html.erb:7
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (148.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:09:36) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (undefined method `_delete' for #<Array:0x2619714>) on line #8 of app/views/questions/index.html.erb:
+5: 
+6: 	
+7: 	<% fields_for :answer_options do |ao| %>
+8: 		<%= ao.text_field :_delete %> 
+9: 	<% end%>
+10: 	
+11: 	<%=submit_tag "ok" %>
+
+    app/views/questions/index.html.erb:8
+    app/views/questions/index.html.erb:7
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (63.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:09:37) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (undefined method `_delete' for #<Array:0x24989f8>) on line #8 of app/views/questions/index.html.erb:
+5: 
+6: 	
+7: 	<% fields_for :answer_options do |ao| %>
+8: 		<%= ao.text_field :_delete %> 
+9: 	<% end%>
+10: 	
+11: 	<%=submit_tag "ok" %>
+
+    app/views/questions/index.html.erb:8
+    app/views/questions/index.html.erb:7
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (165.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:10:12) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (undefined method `_delete' for #<Array:0x25e33f8>) on line #8 of app/views/questions/index.html.erb:
+5: 
+6: 	
+7: 	<% fields_for :answer_options do |ao| %>
+8: 		<%= ao.text_field :_delete %> 
+9: 	<% end%>
+10: 	
+11: 	<%=submit_tag "ok" %>
+
+    app/views/questions/index.html.erb:8
+    app/views/questions/index.html.erb:7
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (59.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:10:13) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (undefined method `_delete' for #<Array:0x247294c>) on line #8 of app/views/questions/index.html.erb:
+5: 
+6: 	
+7: 	<% fields_for :answer_options do |ao| %>
+8: 		<%= ao.text_field :_delete %> 
+9: 	<% end%>
+10: 	
+11: 	<%=submit_tag "ok" %>
+
+    app/views/questions/index.html.erb:8
+    app/views/questions/index.html.erb:7
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (155.4ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:10:13) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (undefined method `_delete' for #<Array:0x25acdd0>) on line #8 of app/views/questions/index.html.erb:
+5: 
+6: 	
+7: 	<% fields_for :answer_options do |ao| %>
+8: 		<%= ao.text_field :_delete %> 
+9: 	<% end%>
+10: 	
+11: 	<%=submit_tag "ok" %>
+
+    app/views/questions/index.html.erb:8
+    app/views/questions/index.html.erb:7
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (67.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:10:40) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (undefined method `name' for #<Array:0x244d05c>) on line #8 of app/views/questions/index.html.erb:
+5: 
+6: 	
+7: 	<% fields_for :answer_options do |ao| %>
+8: 		<%= ao.text_field :name %> 
+9: 	<% end%>
+10: 	
+11: 	<%=submit_tag "ok" %>
+
+    app/views/questions/index.html.erb:8
+    app/views/questions/index.html.erb:7
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (147.1ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:10:41) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (undefined method `name' for #<Array:0x25716f4>) on line #8 of app/views/questions/index.html.erb:
+5: 
+6: 	
+7: 	<% fields_for :answer_options do |ao| %>
+8: 		<%= ao.text_field :name %> 
+9: 	<% end%>
+10: 	
+11: 	<%=submit_tag "ok" %>
+
+    app/views/questions/index.html.erb:8
+    app/views/questions/index.html.erb:7
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (57.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:10:41) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (undefined method `name' for #<Array:0x240fe64>) on line #8 of app/views/questions/index.html.erb:
+5: 
+6: 	
+7: 	<% fields_for :answer_options do |ao| %>
+8: 		<%= ao.text_field :name %> 
+9: 	<% end%>
+10: 	
+11: 	<%=submit_tag "ok" %>
+
+    app/views/questions/index.html.erb:8
+    app/views/questions/index.html.erb:7
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (58.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:10:42) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (undefined method `name' for #<Array:0x2543d94>) on line #8 of app/views/questions/index.html.erb:
+5: 
+6: 	
+7: 	<% fields_for :answer_options do |ao| %>
+8: 		<%= ao.text_field :name %> 
+9: 	<% end%>
+10: 	
+11: 	<%=submit_tag "ok" %>
+
+    app/views/questions/index.html.erb:8
+    app/views/questions/index.html.erb:7
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (56.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:10:42) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (undefined method `name' for #<Array:0x23e1564>) on line #8 of app/views/questions/index.html.erb:
+5: 
+6: 	
+7: 	<% fields_for :answer_options do |ao| %>
+8: 		<%= ao.text_field :name %> 
+9: 	<% end%>
+10: 	
+11: 	<%=submit_tag "ok" %>
+
+    app/views/questions/index.html.erb:8
+    app/views/questions/index.html.erb:7
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (63.6ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:10:42) [GET]
+Rendering questions/index
+
+ActionView::TemplateError (undefined method `name' for #<Array:0x25128d4>) on line #8 of app/views/questions/index.html.erb:
+5: 
+6: 	
+7: 	<% fields_for :answer_options do |ao| %>
+8: 		<%= ao.text_field :name %> 
+9: 	<% end%>
+10: 	
+11: 	<%=submit_tag "ok" %>
+
+    app/views/questions/index.html.erb:8
+    app/views/questions/index.html.erb:7
+    app/views/questions/index.html.erb:2
+
+Rendered rescues/_trace (59.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:10:52) [GET]
+Rendering questions/index
+Completed in 26ms (View: 15, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:12:18) [GET]
+Rendering questions/index
+Completed in 21ms (View: 10, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:12:33) [GET]
+Rendering questions/index
+Completed in 21ms (View: 10, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:13:02) [GET]
+Rendering questions/index
+Completed in 22ms (View: 10, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:14:15) [GET]
+Rendering questions/index
+Completed in 17ms (View: 5, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 12:14:28) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "question"=>{"name"=>"Millainen kulli on hyvä"}, "answer_option_1"=>"iso", "answer_option_2"=>"pieni", "answer_option_3"=>""}
+  [4;36;1mQuestion Create (0.5ms)[0m   [0;1mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('Millainen kulli on hyvä', '2009-10-30 10:14:28', '2009-10-30 10:14:28')[0m
+
+NoMethodError (undefined method `stringify_keys!' for "iso":String):
+  app/controllers/questions_controller.rb:11:in `create'
+
+Rendered rescues/_trace (45.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 12:14:44) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "question"=>{"name"=>"Millainen kulli on hyvä"}, "answer_option_1"=>"iso", "answer_option_2"=>"pieni", "answer_option_3"=>""}
+  [4;35;1mQuestion Create (0.5ms)[0m   [0mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('Millainen kulli on hyvä', '2009-10-30 10:14:44', '2009-10-30 10:14:44')[0m
+
+NoMethodError (undefined method `stringify_keys!' for "iso":String):
+  app/controllers/questions_controller.rb:11:in `create'
+
+Rendered rescues/_trace (52.2ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 12:15:11) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "question"=>{"name"=>"Millainen kulli on hyvä"}, "answer_option_1"=>"iso", "answer_option_2"=>"pieni", "answer_option_3"=>""}
+  [4;36;1mQuestion Create (0.5ms)[0m   [0;1mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('Millainen kulli on hyvä', '2009-10-30 10:15:11', '2009-10-30 10:15:11')[0m
+  [4;35;1mAnswerOption Create (0.8ms)[0m   [0mINSERT INTO "answer_options" ("name", "updated_at", "question_id", "created_at") VALUES('iso', '2009-10-30 10:15:11', 15, '2009-10-30 10:15:11')[0m
+  [4;36;1mAnswerOption Create (0.4ms)[0m   [0;1mINSERT INTO "answer_options" ("name", "updated_at", "question_id", "created_at") VALUES('pieni', '2009-10-30 10:15:11', 15, '2009-10-30 10:15:11')[0m
+
+NoMethodError (You have a nil object when you didn't expect it!
+You might have expected an instance of ActiveRecord::Base.
+The error occurred while evaluating nil.save!):
+  app/controllers/questions_controller.rb:16:in `create'
+
+Rendered rescues/_trace (44.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 12:15:39) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "question"=>{"name"=>"Millainen kulli on hyvä"}, "answer_option_1"=>"iso", "answer_option_2"=>"pieni", "answer_option_3"=>""}
+  [4;35;1mQuestion Create (0.5ms)[0m   [0mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('Millainen kulli on hyvä', '2009-10-30 10:15:39', '2009-10-30 10:15:39')[0m
+  [4;36;1mAnswerOption Create (0.5ms)[0m   [0;1mINSERT INTO "answer_options" ("name", "updated_at", "question_id", "created_at") VALUES('iso', '2009-10-30 10:15:39', 16, '2009-10-30 10:15:39')[0m
+  [4;35;1mAnswerOption Create (0.6ms)[0m   [0mINSERT INTO "answer_options" ("name", "updated_at", "question_id", "created_at") VALUES('pieni', '2009-10-30 10:15:39', 16, '2009-10-30 10:15:39')[0m
+Redirected to http://localhost:3000/questions/16
+Completed in 25ms (DB: 2) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:15:39) [GET]
+  Parameters: {"id"=>"16"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 16) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 16) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 6) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 7) [0m
+Completed in 26ms (View: 16, DB: 2) | 200 OK [http://localhost/questions/16]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:15:44) [GET]
+  Parameters: {"id"=>"16"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 16) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 16) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 6) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 7) [0m
+Completed in 24ms (View: 15, DB: 2) | 200 OK [http://localhost/questions/16]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:15:51) [GET]
+  [4;36;1mQuestion Load (2.2ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 16) [0m
+Completed in 31ms (View: 14, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:16:37) [GET]
+  [4;36;1mQuestion Load (2.1ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+ERROR: compiling _run_erb_app47views47answers47index46html46erb RAISED compile error
+/Users/mpa/Development/inshitu/app/views/answers/index.html.erb:20: syntax error, unexpected kENSURE, expecting $end
+Function body:           def _run_erb_app47views47answers47index46html46erb(local_assigns)
+            old_output_buffer = output_buffer;;@output_buffer = '';  __in_erb_template=true ; @output_buffer.concat "\n"
+@output_buffer.concat "<h1>"; @output_buffer.concat(( @question.name ).to_s); @output_buffer.concat "</h1>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "<ol>\n"
+@output_buffer.concat "\n"
+@output_buffer.concat "\n"
+ form_for @answer do |f| ; @output_buffer.concat "\n"
+@output_buffer.concat "\t\t"; @output_buffer.concat(( select_tag 'answer_option_id', options_for_select(@question.answer_options.collect{ |ao| [ao.name, ao.id] }) ).to_s); @output_buffer.concat "\n"
+@output_buffer.concat "\t\n"
+@output_buffer.concat "\t\t"; @output_buffer.concat((submit_tag "vastaa").to_s); @output_buffer.concat "\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer.concat "\t\n"
+@output_buffer.concat "\t"; @output_buffer.concat "</li>\n"
+@output_buffer.concat "\n"
+ end ; @output_buffer.concat "\n"
+@output_buffer.concat "</ol>\n"
+@output_buffer.concat "\t\n"
+@output_buffer.concat "\t\n"
+@output_buffer
+          ensure
+            self.output_buffer = old_output_buffer
+          end
+Backtrace: /Users/mpa/Development/inshitu/app/views/answers/index.html.erb:20:in `compile!'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:61:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/renderable.rb:28:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/template.rb:199:in `render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_view/base.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1250:in `render_for_file'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:945:in `render_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:51:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1326:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:1332:in `perform_action_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:617:in `call_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:10:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-2.3.4/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/flash.rb:146:in `perform_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:532:in `process_without_filters'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/filters.rb:606:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:391:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/base.rb:386:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/routing/route_set.rb:437:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:87:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:121:in `_call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:130:in `build_middleware_stack'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:29:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:9:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/query_cache.rb:28:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-2.3.4/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/params_parser.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/session/cookie_store.rb:93:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/failsafe.rb:26:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:114:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/reloader.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/actionpack-2.3.4/lib/action_controller/dispatcher.rb:108:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/static.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/rails/rack/log_tailer.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/chunked.rb:15:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:64:in `process'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:159:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:158:in `process_client'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:285:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `initialize'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `new'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/gems/1.8/gems/mongrel-1.1.4/lib/mongrel.rb:268:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.0.1/lib/rack/handler/mongrel.rb:34:in `run'
+/Library/Ruby/Gems/1.8/gems/rails-2.3.4/lib/commands/server.rb:111
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+/Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+script/server:3
+
+ActionView::TemplateError (compile error
+/Users/mpa/Development/inshitu/app/views/answers/index.html.erb:20: syntax error, unexpected kENSURE, expecting $end) on line #20 of app/views/answers/index.html.erb:
+17: 	
+18: 	
+
+    app/views/answers/index.html.erb:20:in `compile!'
+
+Rendered rescues/_trace (49.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:16:43) [GET]
+  [4;35;1mQuestion Load (2.1ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 16) [0m
+Completed in 30ms (View: 18, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2009-10-30 12:16:47) [POST]
+  Parameters: {"commit"=>"vastaa", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option_id"=>"6"}
+  [4;35;1mAnswerOption Load (0.4ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options"."id" = 6) [0m
+  [4;36;1mAnswer Create (0.5ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "answer_option_id", "created_at") VALUES('2009-10-30 10:16:47', 6, '2009-10-30 10:16:47')[0m
+Redirected to http://localhost:3000/answers
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:16:47) [GET]
+  [4;35;1mQuestion Load (2.1ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 16) [0m
+Completed in 124ms (View: 112, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:16:48) [GET]
+  Parameters: {"id"=>"16"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 16) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 16) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 6) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 7) [0m
+Completed in 23ms (View: 15, DB: 1) | 200 OK [http://localhost/questions/16]
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2009-10-30 12:16:52) [POST]
+  Parameters: {"commit"=>"vastaa", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option_id"=>"7"}
+  [4;35;1mAnswerOption Load (0.4ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options"."id" = 7) [0m
+  [4;36;1mAnswer Create (0.5ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "answer_option_id", "created_at") VALUES('2009-10-30 10:16:52', 7, '2009-10-30 10:16:52')[0m
+Redirected to http://localhost:3000/answers
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:16:52) [GET]
+  [4;35;1mQuestion Load (2.1ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 16) [0m
+Completed in 24ms (View: 12, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:16:53) [GET]
+  Parameters: {"id"=>"16"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 16) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 16) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 6) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 7) [0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/16]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:19:23) [GET]
+  [4;35;1mQuestion Load (2.2ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 16) [0m
+Completed in 31ms (View: 18, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:19:31) [GET]
+  [4;35;1mQuestion Load (2.1ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 16) [0m
+Completed in 45ms (View: 20, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2009-10-30 12:19:35) [POST]
+  Parameters: {"commit"=>"vastaa", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option_id"=>"6"}
+  [4;35;1mAnswerOption Load (0.3ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options"."id" = 6) [0m
+  [4;36;1mAnswer Create (0.5ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "answer_option_id", "created_at") VALUES('2009-10-30 10:19:35', 6, '2009-10-30 10:19:35')[0m
+Redirected to http://localhost:3000/answers
+Completed in 19ms (DB: 1) | 302 Found [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:19:35) [GET]
+  [4;35;1mQuestion Load (2.1ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 16) [0m
+Completed in 113ms (View: 100, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2009-10-30 12:19:37) [POST]
+  Parameters: {"commit"=>"vastaa", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option_id"=>"7"}
+  [4;35;1mAnswerOption Load (0.3ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options"."id" = 7) [0m
+  [4;36;1mAnswer Create (0.5ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "answer_option_id", "created_at") VALUES('2009-10-30 10:19:37', 7, '2009-10-30 10:19:37')[0m
+Redirected to http://localhost:3000/answers
+Completed in 20ms (DB: 1) | 302 Found [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:19:37) [GET]
+  [4;35;1mQuestion Load (2.1ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;36;1mAnswerOption Load (0.5ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 16) [0m
+Completed in 25ms (View: 12, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:22:29) [GET]
+  [4;35;1mQuestion Load (2.1ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;36;1mAnswerOption Load (0.5ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 16) [0m
+Completed in 30ms (View: 17, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2009-10-30 12:22:32) [POST]
+  Parameters: {"commit"=>"vastaa", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option_id"=>"7"}
+  [4;35;1mAnswerOption Load (0.3ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options"."id" = 7) [0m
+  [4;36;1mAnswer Create (0.6ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "answer_option_id", "created_at") VALUES('2009-10-30 10:22:32', 7, '2009-10-30 10:22:32')[0m
+
+NoMethodError (undefined method `question' for #<AnswerOption:0x24f76ec>):
+  app/controllers/answers_controller.rb:16:in `create'
+
+Rendered rescues/_trace (42.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2009-10-30 12:23:03) [POST]
+  Parameters: {"commit"=>"vastaa", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option_id"=>"7"}
+  [4;35;1mAnswerOption Load (0.3ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options"."id" = 7) [0m
+  [4;36;1mAnswer Create (0.5ms)[0m   [0;1mINSERT INTO "answers" ("updated_at", "answer_option_id", "created_at") VALUES('2009-10-30 10:23:03', 7, '2009-10-30 10:23:03')[0m
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 16) [0m
+Redirected to http://localhost:3000/answers
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:23:03) [GET]
+  [4;36;1mQuestion Load (2.2ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 18ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:23:18) [GET]
+Rendering questions/index
+Completed in 17ms (View: 5, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 12:23:43) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "question"=>{"name"=>"Lentokone vai juna?"}, "answer_option_1"=>"Lentokone", "answer_option_2"=>"Juna", "answer_option_3"=>"Ihan sama"}
+  [4;35;1mQuestion Create (0.6ms)[0m   [0mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('Lentokone vai juna?', '2009-10-30 10:23:43', '2009-10-30 10:23:43')[0m
+  [4;36;1mAnswerOption Create (0.5ms)[0m   [0;1mINSERT INTO "answer_options" ("name", "updated_at", "question_id", "created_at") VALUES('Lentokone', '2009-10-30 10:23:43', 17, '2009-10-30 10:23:43')[0m
+  [4;35;1mAnswerOption Create (0.4ms)[0m   [0mINSERT INTO "answer_options" ("name", "updated_at", "question_id", "created_at") VALUES('Juna', '2009-10-30 10:23:43', 17, '2009-10-30 10:23:43')[0m
+  [4;36;1mAnswerOption Create (0.5ms)[0m   [0;1mINSERT INTO "answer_options" ("name", "updated_at", "question_id", "created_at") VALUES('Ihan sama', '2009-10-30 10:23:43', 17, '2009-10-30 10:23:43')[0m
+Redirected to http://localhost:3000/questions/17
+Completed in 33ms (DB: 2) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:23:43) [GET]
+  Parameters: {"id"=>"17"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 17) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.7ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 17) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 8) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 9) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 10) [0m
+Completed in 23ms (View: 14, DB: 2) | 200 OK [http://localhost/questions/17]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:23:49) [GET]
+  [4;36;1mQuestion Load (2.5ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 17) [0m
+Completed in 27ms (View: 11, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2009-10-30 12:23:53) [POST]
+  Parameters: {"commit"=>"vastaa", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option_id"=>"10"}
+  [4;36;1mAnswerOption Load (0.3ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options"."id" = 10) [0m
+  [4;35;1mAnswer Create (0.6ms)[0m   [0mINSERT INTO "answers" ("updated_at", "answer_option_id", "created_at") VALUES('2009-10-30 10:23:53', 10, '2009-10-30 10:23:53')[0m
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 17) [0m
+Redirected to http://localhost:3000/answers
+Completed in 23ms (DB: 1) | 302 Found [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:23:53) [GET]
+  [4;35;1mQuestion Load (2.1ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:24:44) [GET]
+  Parameters: {"id"=>"17"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 17) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.7ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 17) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 8) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 9) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 10) [0m
+Completed in 23ms (View: 14, DB: 2) | 200 OK [http://localhost/questions/17]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:24:44) [GET]
+  Parameters: {"id"=>"17"}
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 17) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.7ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 17) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 8) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 9) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 10) [0m
+Completed in 23ms (View: 14, DB: 2) | 200 OK [http://localhost/questions/17]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:24:44) [GET]
+  Parameters: {"id"=>"17"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 17) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.7ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 17) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 8) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 9) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 10) [0m
+Completed in 22ms (View: 14, DB: 2) | 200 OK [http://localhost/questions/17]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:24:46) [GET]
+Rendering questions/index
+Completed in 16ms (View: 5, DB: 0) | 200 OK [http://localhost/questions]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:03) [GET]
+  [4;35;1mQuestion Load (2.5ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 23ms (View: 8, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:04) [GET]
+  [4;36;1mQuestion Load (2.2ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:05) [GET]
+  [4;35;1mQuestion Load (2.1ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:06) [GET]
+  [4;36;1mQuestion Load (2.2ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:07) [GET]
+  [4;35;1mQuestion Load (2.3ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:08) [GET]
+  [4;36;1mQuestion Load (2.2ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:09) [GET]
+  [4;35;1mQuestion Load (2.2ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:10) [GET]
+  [4;36;1mQuestion Load (2.2ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:13) [GET]
+  [4;35;1mQuestion Load (2.2ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 17ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:14) [GET]
+  [4;36;1mQuestion Load (2.2ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:15) [GET]
+  [4;35;1mQuestion Load (2.2ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:16) [GET]
+  [4;36;1mQuestion Load (2.2ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:17) [GET]
+  [4;35;1mQuestion Load (2.2ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:19) [GET]
+  [4;36;1mQuestion Load (2.6ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 18ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:20) [GET]
+  [4;35;1mQuestion Load (2.1ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 14ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:21) [GET]
+  [4;36;1mQuestion Load (2.3ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 12:25:23) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "question"=>{"name"=>"Viikset vai parta?"}, "answer_option_1"=>"Viikset", "answer_option_2"=>"parta", "answer_option_3"=>""}
+  [4;35;1mQuestion Create (0.6ms)[0m   [0mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('Viikset vai parta?', '2009-10-30 10:25:23', '2009-10-30 10:25:23')[0m
+  [4;36;1mAnswerOption Create (0.8ms)[0m   [0;1mINSERT INTO "answer_options" ("name", "updated_at", "question_id", "created_at") VALUES('Viikset', '2009-10-30 10:25:23', 18, '2009-10-30 10:25:23')[0m
+  [4;35;1mAnswerOption Create (0.6ms)[0m   [0mINSERT INTO "answer_options" ("name", "updated_at", "question_id", "created_at") VALUES('parta', '2009-10-30 10:25:23', 18, '2009-10-30 10:25:23')[0m
+Redirected to http://localhost:3000/questions/18
+Completed in 49ms (DB: 2) | 302 Found [http://localhost/questions]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:23) [GET]
+  [4;36;1mQuestion Load (2.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 18) [0m
+Completed in 28ms (View: 12, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:25:24) [GET]
+  Parameters: {"id"=>"18"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 18) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.7ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 18) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 11) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 12) [0m
+Completed in 27ms (View: 15, DB: 2) | 200 OK [http://localhost/questions/18]
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2009-10-30 12:25:31) [POST]
+  Parameters: {"commit"=>"vastaa", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option_id"=>"12"}
+  [4;36;1mAnswerOption Load (0.3ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options"."id" = 12) [0m
+  [4;35;1mAnswer Create (0.5ms)[0m   [0mINSERT INTO "answers" ("updated_at", "answer_option_id", "created_at") VALUES('2009-10-30 10:25:31', 12, '2009-10-30 10:25:31')[0m
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 18) [0m
+Redirected to http://localhost:3000/answers
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:31) [GET]
+  [4;35;1mQuestion Load (2.6ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 106ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:32) [GET]
+  [4;36;1mQuestion Load (2.8ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 25ms (View: 3, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:35) [GET]
+  [4;35;1mQuestion Load (3.1ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 19ms (View: 3, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:36) [GET]
+  [4;36;1mQuestion Load (2.3ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:37) [GET]
+  [4;35;1mQuestion Load (2.7ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:38) [GET]
+  [4;36;1mQuestion Load (2.3ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:39) [GET]
+  [4;35;1mQuestion Load (2.3ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:40) [GET]
+  [4;36;1mQuestion Load (2.2ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:41) [GET]
+  [4;35;1mQuestion Load (2.3ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 14ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:43) [GET]
+  [4;36;1mQuestion Load (2.5ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:45) [GET]
+  [4;35;1mQuestion Load (2.8ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 26ms (View: 5, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:48) [GET]
+  [4;36;1mQuestion Load (2.2ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:51) [GET]
+  [4;35;1mQuestion Load (2.3ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:52) [GET]
+  [4;36;1mQuestion Load (2.3ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:55) [GET]
+  [4;35;1mQuestion Load (2.4ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:56) [GET]
+  [4;36;1mQuestion Load (2.3ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:58) [GET]
+  [4;35;1mQuestion Load (2.4ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 17ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:25:59) [GET]
+  [4;36;1mQuestion Load (2.3ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 14ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:02) [GET]
+  [4;35;1mQuestion Load (2.2ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:03) [GET]
+  [4;36;1mQuestion Load (2.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:06) [GET]
+  [4;35;1mQuestion Load (3.0ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:07) [GET]
+  [4;36;1mQuestion Load (2.3ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:09) [GET]
+  [4;35;1mQuestion Load (8.5ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 26ms (View: 2, DB: 9) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:11) [GET]
+  [4;36;1mQuestion Load (2.3ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:13) [GET]
+  [4;35;1mQuestion Load (2.3ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:14) [GET]
+  [4;36;1mQuestion Load (2.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:17) [GET]
+  [4;35;1mQuestion Load (2.4ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 17ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:18) [GET]
+  [4;36;1mQuestion Load (2.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:19) [GET]
+  [4;35;1mQuestion Load (2.5ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:20) [GET]
+  [4;36;1mQuestion Load (2.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:21) [GET]
+  [4;35;1mQuestion Load (2.3ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#index (for 127.0.0.1 at 2009-10-30 12:26:22) [GET]
+Rendering questions/index
+Completed in 20ms (View: 5, DB: 0) | 200 OK [http://localhost/questions/]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:23) [GET]
+  [4;36;1mQuestion Load (2.2ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:24) [GET]
+  [4;35;1mQuestion Load (2.2ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:25) [GET]
+  [4;36;1mQuestion Load (2.3ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:27) [GET]
+  [4;35;1mQuestion Load (3.7ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 159ms (View: 3, DB: 4) | 200 OK [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:29) [GET]
+  [4;36;1mQuestion Load (2.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 17ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#create (for 127.0.0.1 at 2009-10-30 12:26:30) [POST]
+  Parameters: {"commit"=>"ok", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "question"=>{"name"=>"Nami asdik"}, "answer_option_1"=>"asdokfasdofkasdofk", "answer_option_2"=>"odf", "answer_option_3"=>""}
+  [4;35;1mQuestion Create (0.5ms)[0m   [0mINSERT INTO "questions" ("name", "updated_at", "created_at") VALUES('Nami asdik', '2009-10-30 10:26:30', '2009-10-30 10:26:30')[0m
+  [4;36;1mAnswerOption Create (0.5ms)[0m   [0;1mINSERT INTO "answer_options" ("name", "updated_at", "question_id", "created_at") VALUES('asdokfasdofkasdofk', '2009-10-30 10:26:30', 19, '2009-10-30 10:26:30')[0m
+  [4;35;1mAnswerOption Create (0.4ms)[0m   [0mINSERT INTO "answer_options" ("name", "updated_at", "question_id", "created_at") VALUES('odf', '2009-10-30 10:26:30', 19, '2009-10-30 10:26:30')[0m
+Redirected to http://localhost:3000/questions/19
+Completed in 31ms (DB: 1) | 302 Found [http://localhost/questions]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:30) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.7ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 29ms (View: 20, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:30) [GET]
+  [4;36;1mQuestion Load (2.7ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+Completed in 27ms (View: 12, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:31) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:32) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.5ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 23ms (View: 14, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:33) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 23ms (View: 14, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:34) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:35) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 23ms (View: 14, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#create (for 127.0.0.1 at 2009-10-30 12:26:35) [POST]
+  Parameters: {"commit"=>"vastaa", "authenticity_token"=>"jdqowVre3zGMD/O+HUimyJ3Vj/Y8EW1XAxGuIQTeogI=", "answer_option_id"=>"13"}
+  [4;36;1mAnswerOption Load (0.5ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options"."id" = 13) [0m
+  [4;35;1mAnswer Create (0.5ms)[0m   [0mINSERT INTO "answers" ("updated_at", "answer_option_id", "created_at") VALUES('2009-10-30 10:26:35', 13, '2009-10-30 10:26:35')[0m
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Redirected to http://localhost:3000/answers
+Completed in 23ms (DB: 1) | 302 Found [http://localhost/answers]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:35) [GET]
+  [4;35;1mQuestion Load (2.4ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:38) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 25ms (View: 16, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:38) [GET]
+  [4;36;1mQuestion Load (2.5ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:39) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.5ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 23ms (View: 13, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:39) [GET]
+  [4;35;1mQuestion Load (2.4ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:40) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 25ms (View: 15, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:40) [GET]
+  [4;36;1mQuestion Load (2.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:41) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 116ms (View: 108, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:41) [GET]
+  [4;35;1mQuestion Load (2.5ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 17ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:42) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.7ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 24ms (View: 14, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:43) [GET]
+  [4;36;1mQuestion Load (2.3ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:43) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:44) [GET]
+  [4;35;1mQuestion Load (2.4ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:46) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 26ms (View: 17, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:46) [GET]
+  [4;36;1mQuestion Load (3.7ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 19ms (View: 2, DB: 4) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:47) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.5ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 14, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:47) [GET]
+  [4;35;1mQuestion Load (2.5ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 17ms (View: 3, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:50) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 117ms (View: 15, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:50) [GET]
+  [4;36;1mQuestion Load (3.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 18ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:51) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.5ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:51) [GET]
+  [4;35;1mQuestion Load (2.9ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 17ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:54) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 24ms (View: 15, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:54) [GET]
+  [4;36;1mQuestion Load (2.9ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 18ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:55) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.5ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:55) [GET]
+  [4;35;1mQuestion Load (2.4ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 20ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:57) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 24ms (View: 15, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:57) [GET]
+  [4;36;1mQuestion Load (2.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 18ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:26:59) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:26:59) [GET]
+  [4;35;1mQuestion Load (2.4ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:01) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 28ms (View: 16, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:01) [GET]
+  [4;36;1mQuestion Load (2.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 17ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:02) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:02) [GET]
+  [4;35;1mQuestion Load (2.4ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:05) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 30ms (View: 15, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:05) [GET]
+  [4;36;1mQuestion Load (2.7ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:06) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.5ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:06) [GET]
+  [4;35;1mQuestion Load (2.4ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 104ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:09) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 24ms (View: 15, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:09) [GET]
+  [4;36;1mQuestion Load (2.9ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 18ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:10) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:10) [GET]
+  [4;35;1mQuestion Load (2.4ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:12) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.7ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 27ms (View: 17, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:12) [GET]
+  [4;36;1mQuestion Load (3.0ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 18ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:14) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:14) [GET]
+  [4;35;1mQuestion Load (4.7ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 20ms (View: 2, DB: 5) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:15) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.7ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 25ms (View: 15, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:15) [GET]
+  [4;36;1mQuestion Load (2.5ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 16ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:16) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 23ms (View: 14, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:16) [GET]
+  [4;35;1mQuestion Load (2.4ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:17) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 23ms (View: 15, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:17) [GET]
+  [4;36;1mQuestion Load (2.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:18) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:18) [GET]
+  [4;35;1mQuestion Load (2.4ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:19) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:19) [GET]
+  [4;36;1mQuestion Load (2.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:20) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 109ms (View: 101, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:21) [GET]
+  [4;35;1mQuestion Load (2.4ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 15ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:23) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 27ms (View: 17, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:23) [GET]
+  [4;36;1mQuestion Load (3.0ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 19ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:24) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.5ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 26ms (View: 14, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:24) [GET]
+  [4;35;1mQuestion Load (2.5ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 18ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:27) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:27) [GET]
+  [4;36;1mQuestion Load (2.5ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 21ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:28) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:28) [GET]
+  [4;35;1mQuestion Load (2.5ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 19ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:31) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 111ms (View: 102, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:31) [GET]
+  [4;36;1mQuestion Load (3.6ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 20ms (View: 2, DB: 4) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:32) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:32) [GET]
+  [4;35;1mQuestion Load (3.4ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 19ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:34) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 26ms (View: 16, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:35) [GET]
+  [4;36;1mQuestion Load (2.7ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 18ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:36) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.5ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:36) [GET]
+  [4;35;1mQuestion Load (2.8ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 19ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:38) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:38) [GET]
+  [4;36;1mQuestion Load (2.7ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 19ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:39) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 117ms (View: 15, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:40) [GET]
+  [4;35;1mQuestion Load (2.6ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 19ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:42) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.5ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:42) [GET]
+  [4;36;1mQuestion Load (2.5ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 20ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:43) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (1.4ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 26ms (View: 17, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:43) [GET]
+  [4;35;1mQuestion Load (3.7ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 19ms (View: 2, DB: 4) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:46) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 25ms (View: 15, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:46) [GET]
+  [4;36;1mQuestion Load (2.5ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 17ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:47) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 26ms (View: 14, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:47) [GET]
+  [4;35;1mQuestion Load (2.5ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 18ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:50) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:50) [GET]
+  [4;36;1mQuestion Load (2.5ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 19ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:51) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:51) [GET]
+  [4;35;1mQuestion Load (2.5ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 18ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:53) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.5ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 14, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:53) [GET]
+  [4;36;1mQuestion Load (2.9ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 19ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:54) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.5ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:55) [GET]
+  [4;35;1mQuestion Load (2.8ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 20ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:57) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 28ms (View: 19, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:57) [GET]
+  [4;36;1mQuestion Load (2.8ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 131ms (View: 3, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:27:58) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.4ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 28ms (View: 17, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:27:58) [GET]
+  [4;35;1mQuestion Load (3.1ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 22ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:28:01) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.5ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:28:01) [GET]
+  [4;36;1mQuestion Load (2.7ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 19ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:28:02) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:28:02) [GET]
+  [4;35;1mQuestion Load (2.6ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 18ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:28:05) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.5ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 13, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:28:05) [GET]
+  [4;36;1mQuestion Load (2.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 18ms (View: 3, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:28:06) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 23ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:28:06) [GET]
+  [4;35;1mQuestion Load (2.5ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 17ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:28:08) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.7ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 29ms (View: 19, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:28:08) [GET]
+  [4;36;1mQuestion Load (2.7ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 18ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:28:10) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.9ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.6ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 24ms (View: 13, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:28:10) [GET]
+  [4;35;1mQuestion Load (2.5ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 19ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:28:12) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.4ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 24ms (View: 14, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:28:13) [GET]
+  [4;36;1mQuestion Load (2.4ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 20ms (View: 2, DB: 2) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:28:14) [GET]
+  Parameters: {"id"=>"19"}
+  [4;35;1mQuestion Load (0.3ms)[0m   [0mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;36;1mAnswerOption Load (0.5ms)[0m   [0;1mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 22ms (View: 14, DB: 1) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:28:14) [GET]
+  [4;35;1mQuestion Load (2.7ms)[0m   [0mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 18ms (View: 2, DB: 3) | 200 OK [http://localhost/answers]
+
+
+Processing QuestionsController#show (for 127.0.0.1 at 2009-10-30 12:28:16) [GET]
+  Parameters: {"id"=>"19"}
+  [4;36;1mQuestion Load (0.3ms)[0m   [0;1mSELECT * FROM "questions" WHERE ("questions"."id" = 19) [0m
+Rendering questions/show
+  [4;35;1mAnswerOption Load (0.6ms)[0m   [0mSELECT * FROM "answer_options" WHERE ("answer_options".question_id = 19) [0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 13) [0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "answers" WHERE ("answers".answer_option_id = 14) [0m
+Completed in 130ms (View: 121, DB: 2) | 200 OK [http://localhost/questions/19]
+
+
+Processing AnswersController#index (for 127.0.0.1 at 2009-10-30 12:28:16) [GET]
+  [4;36;1mQuestion Load (3.8ms)[0m   [0;1mSELECT * FROM "questions" [0m
+Rendering answers/index
+Completed in 44ms (View: 12, DB: 4) | 200 OK [http://localhost/answers]
